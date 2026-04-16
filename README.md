@@ -11,6 +11,11 @@ Este repositório contém o código-fonte de um sistema de catálogo de produtos
 * **Deploy (AWS Elastic Beanstalk):** [Acessar ao Projeto](http://catalogo-produtos-categoria-v1-admin.eba-2anaedvb.us-east-1.elasticbeanstalk.com/)
 * **API Publicada:** [Acessar à API](http://catalogo-produtos-categoria-v1-admin.eba-2anaedvb.us-east-1.elasticbeanstalk.com/api/)
 
+## 🔐 Credenciais de Acesso (Admin)
+Para realizar a gestão de dados através do painel administrativo ou endpoints protegidos:
+* **Username:** admin
+* **Password:** 123456
+
 ## 📖 Guia de Utilização da API (Etapas de Implementação)
 
 Para garantir o funcionamento correto dos dados, é necessário seguir a ordem lógica de cadastro devido ao relacionamento de dependência entre as entidades:
