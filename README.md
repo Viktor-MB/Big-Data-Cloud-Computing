@@ -41,6 +41,7 @@ Siga as instruções abaixo para configurar o ambiente de desenvolvimento:
 
 3.  **Execute as migrações (se aplicável):**
     ```bash
+    python manage.py makemigrations
     python manage.py migrate
     ```
 
