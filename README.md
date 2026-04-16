@@ -8,8 +8,8 @@ Este repositório contém o código-fonte de um sistema de catálogo de produtos
 * **Luca Confente**
 
 ## 🔗 Links do Projeto
-* **Deploy (AWS Elastic Beanstalk):** [Aceder ao Projeto](http://catalogo-produtos-categoria-v1-admin.eba-2anaedvb.us-east-1.elasticbeanstalk.com/)
-* **API Publicada:** [Aceder à API](http://catalogo-produtos-categoria-v1-admin.eba-2anaedvb.us-east-1.elasticbeanstalk.com/api/)
+* **Deploy (AWS Elastic Beanstalk):** [assessar ao Projeto](http://catalogo-produtos-categoria-v1-admin.eba-2anaedvb.us-east-1.elasticbeanstalk.com/)
+* **API Publicada:** [Assessar à API](http://catalogo-produtos-categoria-v1-admin.eba-2anaedvb.us-east-1.elasticbeanstalk.com/api/)
 
 ## 🛠️ Alterações e Funcionalidades Implementadas
 Nesta versão do projeto, foram realizadas as seguintes melhorias técnicas:
