@@ -1,4 +1,4 @@
-# Catálogo de Produtos e Categorias
+# Catálogo de Produtos e Categorias (Entrega AP1)
 
 Este repositório contém o código-fonte de um sistema de catálogo de produtos, desenvolvido com Django e hospedado na AWS.
 
