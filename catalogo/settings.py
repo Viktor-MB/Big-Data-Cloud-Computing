@@ -101,7 +101,8 @@ USE_TZ = True
 
 ALLOWED_HOSTS = os.getenv(
     'DJANGO_ALLOWED_HOSTS',
-    'localhost,127.0.0.1,.elasticbeanstalk.com'
+    'localhost,127.0.0.1',
+    '.elasticbeanstalk.com',
 ).split(',')
 
 # Arquivos estáticos para deploy
