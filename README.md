@@ -50,6 +50,8 @@ Na AP1 o banco era SQLite (arquivo local na instância, que some a cada deploy) 
 
 ![S3 Console](evidencias/s3-bucket-produtos.png)
 
+![S3 Bucket detalhe](evidencias/s3-bucket-produtos-2.png)
+
 **Admin logado como root:**
 
 ![Django Admin](evidencias/admin-dashboard-root.png)
@@ -111,6 +113,24 @@ Variáveis que precisam estar configuradas no ambiente do EB (Configuration → 
 | `GET /api/pedidos/` | lista pedidos |
 | `POST /api/pedidos/` | cria pedido com itens |
 | `POST /api/pedidos/{id}/adicionar-item/` | adiciona item ao pedido |
+
+## Etapas realizadas
+
+1. Criamos uma instância PostgreSQL no AWS RDS (`catalogo-db`, `db.t4g.micro`, região `us-east-1`) e configuramos o Security Group para liberar a porta 5432 às instâncias do Elastic Beanstalk.
+
+2. Conectamos ao RDS via AWS CloudShell e criamos o banco manualmente, já que o RDS só cria o banco padrão `postgres` na inicialização: `psql -h <host> -U postgres -d postgres -c "CREATE DATABASE catalogo_db;"`.
+
+3. Criamos o bucket S3 `catalogo-imagens-viktor` para armazenar as imagens dos produtos.
+
+4. Adicionamos as dependências `django-storages` e `boto3` ao `requirements.txt` e integramos o Django ao S3 via dicionário `STORAGES` (a forma correta no Django 6.0, já que `DEFAULT_FILE_STORAGE` foi removido).
+
+5. Evoluímos o modelo de dados adicionando `Pedido`, `ItemPedido` e o campo `atributos` (JSONField) em `Produto`, com as respectivas migrations e endpoints REST.
+
+6. Configuramos as variáveis de ambiente no Elastic Beanstalk (`DB_HOST`, `DB_NAME`, `DB_USER`, `DB_PASSWORD`, `AWS_STORAGE_BUCKET_NAME`) para que nenhuma credencial ficasse no código.
+
+7. Corrigimos o `.ebextensions/django.config` para ativar a virtualenv nos `container_commands` (`source /var/app/venv/*/bin/activate &&`) e adicionamos o comando automático de criação do superusuário `root`.
+
+8. Geramos o pacote `app.zip` com o script `build_zip.py` e fizemos o deploy no Elastic Beanstalk. Validamos os endpoints, o Django Admin e o upload de imagem persistindo no S3.
 
 ## Decisões técnicas
 
