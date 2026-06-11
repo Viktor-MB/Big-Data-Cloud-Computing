@@ -79,9 +79,10 @@ else:
 # ─── AWS S3 para Mídia ─────────────────────────────────────────────────────────
 AWS_STORAGE_BUCKET_NAME = os.getenv('AWS_STORAGE_BUCKET_NAME', '')
 AWS_S3_REGION_NAME = os.getenv('AWS_S3_REGION_NAME', 'us-east-1')
-AWS_DEFAULT_ACL = None
+AWS_DEFAULT_ACL = 'public-read'
 AWS_S3_FILE_OVERWRITE = False
 AWS_S3_OBJECT_PARAMETERS = {'CacheControl': 'max-age=86400'}
+AWS_QUERYSTRING_AUTH = False
 
 # ─── Arquivos Estáticos ─────────────────────────────────────────────────────────
 STATIC_URL = '/static/'
