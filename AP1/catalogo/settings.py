@@ -7,10 +7,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', 'django-insecure-ux5ls$^&e%3j)vrfl=-*(8d@5!6=%vu%a6q^0y+1jtzcx@o87s')
 DEBUG = os.getenv('DJANGO_DEBUG', 'False') == 'True'
 
-ALLOWED_HOSTS = os.getenv(
-    'DJANGO_ALLOWED_HOSTS',
-    'localhost,127.0.0.1,.elasticbeanstalk.com'
-).split(',')
+ALLOWED_HOSTS = ['*']
 
 # ─── Apps ──────────────────────────────────────────────────────────────────────
 INSTALLED_APPS = [
